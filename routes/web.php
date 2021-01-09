@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/detail', 'DetailController@index')->name('detail');
 // admin/....
 Route::prefix('admin')
     ->namespace('Admin')
