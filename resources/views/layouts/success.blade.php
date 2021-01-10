@@ -16,7 +16,7 @@
   <body>
      @include('includes.navbar-alternate')
      @yield('content')
-     @include('includes.footer')
+    
      @stack('prepend-script')
      @include('includes.script')
      @stack('addon-script')
