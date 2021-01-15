@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\TravelPackage;
 class HomeController extends Controller
 {
     //
     public function index(Request $request){
-        return view('pages.home');
+        $items = TravelPackage::with('galleries')->get();
+        return view('pages.home',[
+            'items' => $items
+        ]);
     }
 
     public function tesapi(){
